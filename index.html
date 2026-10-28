@@ -888,18 +888,19 @@
                             </div>
                             <span class="job-date">Jul 2024 – Mar 2026</span>
                         </div>
-                        <p class="job-summary">I worked on two apps: the consumer app and WedMeGood for Business, the vendor app.</p>
+                        <p class="job-summary">I worked across the consumer app and WedMeGood for Business, the vendor app: 250+ commits over 19 months, from the vendor profile funnel to Play compliance and crash triage.</p>
                         <ul>
-                            <li><strong>Cut the crash rate from 20%+ to 0.3% (−98.5%)</strong> by fixing memory leaks found with LeakCanary and adding structured exception handling.</li>
-                            <li><strong>Built enquiry-to-chat</strong>, real-time messaging between vendors and couples on Socket.IO with lifecycle-aware components.</li>
-                            <li><strong>Started server-driven UI (SDUI)</strong> so the team could change screens and run remote config without an app release.</li>
-                            <li>Migrated legacy Java and Kotlin synthetics to <strong>Kotlin, Data Binding and Jetpack Compose</strong>, and refactored critical screens to MVVM with Hilt.</li>
-                            <li>Made API calls asynchronous with Coroutines and Retrofit, which sped up screen loads and reduced ANRs. Also profiled and improved app startup.</li>
-                            <li>Upgraded the API level and Google Sign-In, migrated the image picker, and integrated Crashlytics, Sentry and CleverTap.</li>
+                            <li><strong>Cut the crash rate from 20%+ to 0.3% (−98.5%)</strong> through Crashlytics and Play Console crash, ANR and OOM sweeps, LeakCanary leak fixes, moving app-start work off the main thread, and a retry interceptor with de-duplicated 401 logout.</li>
+                            <li><strong>Built the Write-a-Review module</strong> in Jetpack Compose with Clean Architecture (repository, 10 use cases, Hilt, mock data sources): the codebase's first fully layered Compose feature module (~5.6k lines), now the template for new modules.</li>
+                            <li><strong>Rebuilt the vendor profile</strong>, the main screen before an enquiry: pricing, album, About, banquets, video and similar vendors.</li>
+                            <li><strong>Shipped a WhatsApp lead funnel</strong> with OTP verification, a one-to-many enquiry redesign, SMS OTP autofill, and enriched leads for better attribution.</li>
+                            <li><strong>Kept the app publishable on Google Play:</strong> targetSdk 35, edge-to-edge, 16 KB page-size support, Google Sign-In migration, and a fix for the intent-redirection vulnerability Play flagged.</li>
+                            <li><strong>Built enquiry-to-chat</strong> on Socket.IO with lifecycle-aware components, and started <strong>server-driven UI (SDUI)</strong>.</li>
+                            <li>Removed Kotlin synthetics and Anko in favour of Data Binding, Compose and MVVM with Hilt. Added an Android 13+ push-permission primer and fixed CleverTap and impression analytics.</li>
                             <li><strong>Won the internal hackathon.</strong></li>
                         </ul>
                         <div class="tags">
-                            <span class="tag">Kotlin</span><span class="tag">Java</span><span class="tag">Compose</span><span class="tag">Data Binding</span><span class="tag">Socket.IO</span><span class="tag">SDUI</span><span class="tag">LeakCanary</span><span class="tag">Sentry</span><span class="tag">CleverTap</span>
+                            <span class="tag">Kotlin</span><span class="tag">Java</span><span class="tag">Compose</span><span class="tag">Data Binding</span><span class="tag">Socket.IO</span><span class="tag">SDUI</span><span class="tag">Clean Architecture</span><span class="tag">targetSdk 35</span><span class="tag">16 KB pages</span><span class="tag">LeakCanary</span><span class="tag">Sentry</span><span class="tag">CleverTap</span>
                         </div>
                     </article>
 
@@ -1003,6 +1004,20 @@
                         <div class="org">WedMeGood · 2024–25</div>
                         <span class="impact">Turned enquiries into conversations</span>
                         <p>Built a Socket.IO messaging layer shared by the consumer and vendor apps, with lifecycle-aware connection handling. I also laid the groundwork for server-driven UI.</p>
+                    </article>
+
+                    <article class="project reveal">
+                        <div class="project-top"><h3>Write-a-Review module</h3><span class="ic"><i class="fas fa-star-half-stroke"></i></span></div>
+                        <div class="org">WedMeGood · 2026</div>
+                        <span class="impact">First fully layered Compose module in the app</span>
+                        <p>A review flow built from scratch in Jetpack Compose with Clean Architecture: repository, remote and mock data sources, 10 use cases including AI-generated titles, Hilt DI, image handling and its own nav graph. About 5.6k lines, now the pattern other modules follow.</p>
+                    </article>
+
+                    <article class="project reveal" style="--d:0.10s">
+                        <div class="project-top"><h3>Play compliance &amp; security</h3><span class="ic"><i class="fab fa-google-play"></i></span></div>
+                        <div class="org">WedMeGood · 2024–25</div>
+                        <span class="impact">Kept every update publishable on Google Play</span>
+                        <p>Migrated targetSdk 34 → 35 with edge-to-edge, added 16 KB page-size support, moved to the new Google Sign-In, removed deprecated Kotlin synthetics and Anko, and fixed the intent-redirection vulnerability Play flagged.</p>
                     </article>
 
                     <article class="project reveal" style="--d:0.00s">
@@ -1578,6 +1593,8 @@
                 ['E', 'Crashlytics', 'Crash rate 20.4% · FATAL EXCEPTION: main (legacy code)'],
                 ['W', 'LeakCanary', '14 retained objects found, investigating…'],
                 ['I', 'WedMeGood', 'Crash rate 20.4% → 0.3% ✓  (−98.5%)'],
+                ['D', 'PlayConsole', 'targetSdk 35 · edge-to-edge · 16 KB page size · intent-redirection fixed ✓'],
+                ['D', 'Reviews', 'Write-a-Review module: Compose + Clean Architecture, 10 use cases ✓'],
                 ['D', 'Socket.IO', 'Real-time vendor ↔ couple chat connected'],
                 ['I', 'Mylo', 'onResume() · Senior Android Engineer · Mar 2026 · RUNNING'],
                 ['D', 'Mylo', 'Compose checkout, NUX revamp and A/B experiments shipped'],
